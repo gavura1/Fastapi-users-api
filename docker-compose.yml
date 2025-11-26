@@ -14,5 +14,17 @@ services:
     volumes:
       - db_data:/var/lib/mysql
 
+
+  api:
+    build: .
+    depends_on:
+      - db 
+    environment:
+      DATABASE_URL: "mysql+pymysql://user:password@db:3306/users_db"
+    command: ["sh", "-c", "sleep 10 && uvicorn app.main:app --host 0.0.0.0 --port 8000"]
+    ports:
+      - "8000:8000"
+      
+
 volumes:
   db_data:
