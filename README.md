@@ -57,7 +57,7 @@ requirements.txt   # Python dependencies
 
 docs/
 └── screenshots/   # API, Swagger UI, AWS EC2, docker ps, ...
-
+```
 ---
 
 ## Getting Started
